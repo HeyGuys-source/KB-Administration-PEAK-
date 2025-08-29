@@ -1,0 +1,68 @@
+I would like you to generate a very organized, simple but extremely advanced Discord Administration Bot in Python using discord.py (latest supported version). The bot should be modular, with all commands neatly structured into cogs for easy scalability and readability.
+
+The focus is on 25 advanced administration slash commands that allow high-level server management and automation. Additionally, there are 3 special administration commands that must be included with detailed functionality:
+
+⸻
+
+🔹 Special Commands (MUST-HAVE)
+	1.	/echo <message> <format_type> <OPTIONAL: message_id>
+	•	Parameters:
+	•	<message> → The content the bot will send.
+	•	<format_type> → Either "Plain Text" or "Embed".
+	•	<message_id> (optional) → If provided, the bot replies to that specific message.
+	•	Behavior: The bot echoes the provided message in the selected format. If "Embed" is chosen, display it inside a styled embed message. If message_id is provided, the bot replies directly to that message.
+	2.	/vcmassmove <vc_channel>
+	•	Parameters:
+	•	<vc_channel> → The chosen voice channel.
+	•	Behavior: Removes all users currently in that VC channel (disconnects them, but does not kick them from the server).
+	3.	/masslockdown <multiple_channels>
+	•	Parameters:
+	•	<multiple_channels> → A list of text channels to lock down.
+	•	Behavior: Applies a lockdown (disables @everyone’s messaging permissions) across all selected channels. A toggle/unlock option must also exist to restore permissions.
+
+⸻
+
+🔹 25 Advanced Normal Administration Slash Commands
+
+The bot should include the following administration commands, all as slash commands with proper permissions checks (Administrator or Manage Server roles only):
+	1.	/ban <user> <reason> → Bans a user with a logged reason.
+	2.	/unban <user> → Unbans a user by ID or username.
+	3.	/kick <user> <reason> → Kicks a user with a logged reason.
+	4.	/mute <user> <duration> <reason> → Temporarily mutes a user (time-based mute).
+	5.	/unmute <user> → Removes mute from a user.
+	6.	/warn <user> <reason> → Issues a warning to a user, stored in a database.
+	7.	/warnings <user> → Views all warnings for a user.
+	8.	/clearwarnings <user> → Clears all warnings of a user.
+	9.	/slowmode <channel> <duration> → Enables slowmode in a channel for a specified duration.
+	10.	/purge <amount> → Bulk deletes a chosen number of messages.
+	11.	/nick <user> <nickname> → Changes a user’s nickname.
+	12.	/resetnick <user> → Resets a user’s nickname.
+	13.	/move <user> <vc_channel> → Moves a user to a specified VC.
+	14.	/roleadd <user> <role> → Adds a role to a user.
+	15.	/roleremove <user> <role> → Removes a role from a user.
+	16.	/roleall <role> → Gives a specific role to every member in the server.
+	17.	/removeroleall <role> → Removes a specific role from every member in the server.
+	18.	/serverinfo → Displays detailed server information (owner, member count, boost level, roles, channels, etc.).
+	19.	/userinfo <user> → Displays detailed information about a specific user.
+	20.	/avatar <user> → Shows the avatar of a user in high resolution.
+	21.	/lock <channel> → Locks a single channel (disables messages).
+	22.	/unlock <channel> → Unlocks a single channel.
+	23.	/poll <question> <options> → Creates a poll with reactions for voting.
+	24.	/announce <channel> <message> → Sends a styled announcement embed to the selected channel.
+	25.	/servermute <user> → Server-mutes a user across all VCs.
+
+⸻
+
+🔹 Requirements & Specifications
+	•	All commands should be structured into separate cogs (e.g., moderation, utility, server management, special).
+	•	Slash commands must use the new discord.app_commands system.
+	•	Permission checks (e.g., only admins can run certain commands).
+	•	Logging system: All moderation actions should be logged in a configurable mod-log channel.
+	•	Error handling: Clear error messages for missing permissions, invalid inputs, or wrong usage.
+	•	Code must be clean, efficient, and follow Python best practices (PEP8).
+
+⸻
+
+🔹 Final Goal
+
+I want a fully functional, simple yet advanced Administration Bot with 25 advanced normal slash commands + the 3 special commands described above, coded in a highly organized way with cogs. The result should be scalable, professional, and production-ready.

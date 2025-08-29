@@ -1,0 +1,36 @@
+2025-08-29 18:27:46,599 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-08-29 18:27:46,599 - root - ERROR - DISCORD_TOKEN environment variable not found!
+2025-08-29 18:32:15,105 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-08-29 18:32:15,107 - discord.client - INFO - logging in using static token
+2025-08-29 18:32:17,140 - root - INFO - Database initialized successfully
+2025-08-29 18:32:17,150 - root - INFO - Loaded cog: cogs.moderation
+2025-08-29 18:32:17,154 - root - INFO - Loaded cog: cogs.utility
+2025-08-29 18:32:17,177 - root - INFO - Loaded cog: cogs.server_management
+2025-08-29 18:32:17,184 - root - INFO - Loaded cog: cogs.special_commands
+2025-08-29 18:32:17,470 - root - INFO - Synced 29 commands
+2025-08-29 18:32:17,685 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 86aeba7759d91db713b30727263f44cb).
+2025-08-29 18:32:19,695 - root - INFO - KB Administrator#9280 has logged in and is ready!
+2025-08-29 18:32:19,697 - root - INFO - Bot is in 2 guilds
+2025-08-29 18:32:20,883 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-08-29 18:32:20,884 - discord.client - INFO - logging in using static token
+2025-08-29 18:32:21,400 - root - INFO - Database initialized successfully
+2025-08-29 18:32:21,403 - root - INFO - Loaded cog: cogs.moderation
+2025-08-29 18:32:21,406 - root - INFO - Loaded cog: cogs.utility
+2025-08-29 18:32:21,408 - root - INFO - Loaded cog: cogs.server_management
+2025-08-29 18:32:21,409 - root - INFO - Loaded cog: cogs.special_commands
+2025-08-29 18:33:17,451 - root - INFO - Synced 29 commands
+2025-08-29 18:33:18,018 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: bbf47fe6e2a43330bcfa123c8afb8ac8).
+2025-08-29 18:33:20,049 - root - INFO - KB Administrator#9280 has logged in and is ready!
+2025-08-29 18:33:20,050 - root - INFO - Bot is in 2 guilds
+2025-08-29 19:56:30,799 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-08-29 19:56:30,800 - discord.client - INFO - logging in using static token
+2025-08-29 19:56:31,213 - root - INFO - Database initialized successfully
+2025-08-29 19:56:31,227 - root - INFO - Loaded cog: cogs.moderation
+2025-08-29 19:56:31,229 - root - INFO - Loaded cog: cogs.utility
+2025-08-29 19:56:31,234 - root - INFO - Loaded cog: cogs.server_management
+2025-08-29 19:56:31,238 - root - INFO - Loaded cog: cogs.special_commands
+2025-08-29 19:56:31,243 - root - INFO - Loaded cog: cogs.message_reports
+2025-08-29 19:56:31,541 - root - INFO - Synced 30 commands
+2025-08-29 19:56:31,829 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 06e1b6e7131cf10d4c53a4eaec699905).
+2025-08-29 19:56:33,855 - root - INFO - KB Administrator#9280 has logged in and is ready!
+2025-08-29 19:56:33,855 - root - INFO - Bot is in 2 guilds

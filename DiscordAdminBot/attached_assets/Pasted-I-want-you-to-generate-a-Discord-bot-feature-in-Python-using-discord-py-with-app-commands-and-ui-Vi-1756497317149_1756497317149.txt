@@ -1,0 +1,100 @@
+I want you to generate a Discord bot feature in Python (using discord.py with app_commands and ui.View) that handles message reporting through reaction events. The flow and functionality should be structured very clearly, extremely decorative, and highly professional. Please follow these requirements exactly:
+
+⸻
+
+🔹 Event Trigger
+	•	When any user reacts to another user’s message with this specific custom emoji:
+	•	<:messageReport:1406321078086668419>
+	•	The bot should wait for a few seconds (3–5 seconds), then automatically remove the reaction from the message.
+	•	Once the reaction is removed, the bot will send a decorative, detailed embed to a fixed moderation channel with this ID:
+	•	1410841913111875675
+
+⸻
+
+🔹 Embed Details (Report Log Embed)
+
+The embed should be extremely detailed and visually decorative, containing all of the following information:
+	•	Reporter (the person who reacted):
+	•	Full Discord ID
+	•	Full Discord username (e.g., username#1234)
+	•	Full Discord display name (global/display name)
+	•	Reported User (the person whose message got reacted to):
+	•	Full Discord ID
+	•	Full Discord username (e.g., username#1234)
+	•	Full Discord display name
+	•	Reported Message:
+	•	Snippet/preview of the reported message content
+	•	Message link (if available)
+
+The embed should have:
+	•	A main decorative header (title: “📢 User Report System”).
+	•	A timestamp field for when the report was created.
+	•	A distinct color border (light red to indicate reporting).
+
+⸻
+
+🔹 Interactive Moderation Buttons (Inside a UI View)
+
+Below the main embed, the bot should send a secondary embed styled in light blue, titled:
+	•	"🔧 Moderation Actions"
+
+This embed should contain 5 interactive buttons, each with unique styling, emoji, and color:
+	1.	🗑️ Delete Message
+	•	Style: Red (danger)
+	•	Behavior:
+	•	Deletes the reported message.
+	•	Sends a direct message (DM) to the reported user saying:
+"Your message was deleted by moderators due to violation of server rules. Please be careful moving forward."
+	•	Sends a confirmation message embed in the moderation log channel, e.g.:
+"@mentioned_moderator deleted the reported message. Action resolved."
+	2.	⚠️ Warn User
+	•	Style: Yellow (warning)
+	•	Behavior:
+	•	Issues a formal warning to the reported user.
+	•	Sends them a DM warning message:
+"You have been officially warned by moderators due to a reported message. Continued violations may result in further punishment."
+	•	Sends a confirmation embed in the mod log channel, e.g.:
+"@mentioned_moderator issued a warning to the reported user. Action resolved."
+	3.	✅ No Action Needed
+	•	Style: Green (success)
+	•	Behavior:
+	•	Does not take any punitive action.
+	•	Sends a DM to the reporter (the person who reacted with the emoji) saying:
+"Your report was reviewed by moderators. No action was necessary. Thank you for keeping the community safe!"
+	•	Sends a confirmation embed in the mod log channel, e.g.:
+"@mentioned_moderator resolved this report with no action taken."
+	4.	🔗 Jump To Message
+	•	Style: Grey (secondary)
+	•	Behavior:
+	•	Sends a clickable message link to the reported message directly into the moderation channel.
+	•	Confirmation embed example:
+"@mentioned_moderator accessed the reported message link. Action logged."
+	5.	🌏 Send Message
+	•	Style: Blue (primary)
+	•	Behavior:
+	•	Bot sends a reply directly under the reported message in the public channel saying:
+"@mentioned_user, your message was reported. Moderators are reviewing this case."
+	•	Confirmation embed example:
+"@mentioned_moderator sent a public moderation notice under the reported message. Action logged."
+
+⸻
+
+🔹 Extra Important Behavior
+	•	Every time a moderator/admin interacts with a button, the bot should:
+	•	Perform the exact action tied to that button.
+	•	Send a different variation of a confirmation embed (slightly randomized phrasing each time, to feel natural). Examples:
+	•	"@mentioned_moderator handled this report. Issue resolved."
+	•	"Report closed by @mentioned_moderator. Appropriate action was taken."
+	•	"@mentioned_moderator reviewed and resolved this case."
+	•	The secondary light blue embed (“🔧 Moderation Actions”) holding the buttons must always remain directly below the main embed, clearly structured.
+
+⸻
+
+🔹 Final Goal
+
+The feature must:
+	•	Be clean, scalable, and production-ready.
+	•	Use discord.py event listeners for detecting the emoji reaction.
+	•	Use discord.ui.View and button interactions for the moderation actions.
+	•	Have proper error handling (e.g., if the reported message is already deleted, if the bot lacks permissions, etc.).
+	•	All moderation actions should be logged in the moderation log channel ID: 1410841913111875675.

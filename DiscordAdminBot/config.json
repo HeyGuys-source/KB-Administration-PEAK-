@@ -1,0 +1,11 @@
+{
+    "mod_log_channel": null,
+    "default_mute_role": "Muted",
+    "max_warnings": 3,
+    "auto_ban_on_max_warnings": false,
+    "log_all_actions": true,
+    "embed_color": 11829830,
+    "success_color": 65280,
+    "error_color": 16711680,
+    "warning_color": 16776960
+}
