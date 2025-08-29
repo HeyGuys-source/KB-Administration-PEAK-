@@ -90,7 +90,8 @@ class AdminBot(commands.Bot):
             'cogs.utility', 
             'cogs.server_management',
             'cogs.special_commands',
-            'cogs.message_reports'
+            'cogs.message_reports',
+            'cogs.keepalive'
         ]
         
         for cog in cog_files:
