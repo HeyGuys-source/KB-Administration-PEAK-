@@ -7,6 +7,8 @@ import logging
 import sys
 from bot_config import BotConfig
 from database import Database
+from web_server import WebServer
+import threading
 
 # Performance optimizations
 try:
@@ -78,6 +80,7 @@ class AdminBot(commands.Bot):
         
         self.config = BotConfig()
         self.db = Database()
+        self.web_server = None
         
     async def setup_hook(self):
         """Called when the bot is starting up"""
@@ -107,6 +110,19 @@ class AdminBot(commands.Bot):
             logging.info(f'Synced {len(synced)} commands')
         except Exception as e:
             logging.error(f'Failed to sync commands: {e}')
+        
+        # Start web server for UptimeRobot monitoring
+        self.start_web_server()
+    
+    def start_web_server(self):
+        """Start the web server for UptimeRobot monitoring"""
+        try:
+            port = int(os.getenv('PORT', '8080'))
+            self.web_server = WebServer(bot_instance=self)
+            self.web_server.start_in_thread(host='0.0.0.0', port=port)
+            logging.info(f'Web server started on port {port} for UptimeRobot monitoring')
+        except Exception as e:
+            logging.error(f'Failed to start web server: {e}')
     
     async def on_ready(self):
         """Called when the bot is ready"""
@@ -174,6 +190,7 @@ async def main():
         return
     
     try:
+        # Start the bot - this will run indefinitely
         await bot.start(token)
     except KeyboardInterrupt:
         logging.info('Bot shutdown requested by user')
@@ -182,5 +199,15 @@ async def main():
     finally:
         await bot.close()
 
+def run_bot():
+    """Run the bot with proper exception handling"""
+    try:
+        asyncio.run(main())
+    except KeyboardInterrupt:
+        logging.info('Application shutdown requested')
+    except Exception as e:
+        logging.error(f'Application error: {e}')
+
 if __name__ == '__main__':
-    asyncio.run(main())
+    # Keep the application running
+    run_bot()
