@@ -1,6 +1,7 @@
 # Core Framework
 discord.py==2.6.2
 aiosqlite==0.21.0
+flask>=3.1.0
 
 # Performance Optimization
 uvloop==0.21.0
